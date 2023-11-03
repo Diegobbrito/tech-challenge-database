@@ -20,7 +20,7 @@ resource "aws_db_subnet_group" "lanchonetedb" {
 
 resource "aws_subnet" "lanchonetedb" {
   count                   = 2
-  cidr_block              = "10.0.1.${count.index + 1}/24"
+  cidr_block              = "10.0.1.0/24"
   availability_zone       = "us-east-1a"
   vpc_id                  = aws_vpc.lanchonetedb.id
   map_public_ip_on_launch = true
@@ -28,4 +28,8 @@ resource "aws_subnet" "lanchonetedb" {
 
 resource "aws_vpc" "lanchonetedb" {
   cidr_block = "10.0.0.0/16"
+}
+
+output "rds_endpoint" {
+  value = aws_db_instance.lanchonetedb.endpoint
 }
