@@ -2,16 +2,6 @@ provider "aws" {
   region = "us-east-1"
 }
 
-variable "db_user" {
-  description = "GitHub secret for database user"
-  default     = var.db_user != "" ? var.db_user : "usuario"
-}
-
-variable "db_password" {
-  description = "GitHub secret for database password"
-  default     = var.db_password != "" ? var.db_password : "q1w2e3r4t5"
-}
-
 resource "aws_db_instance" "lanchonetedb" {
   identifier           = "dblanchonete"
   instance_class       = "db.t2.micro"
