@@ -13,6 +13,7 @@ resource "aws_db_instance" "lanchonetedb" {
   password             = var.db_password
   db_subnet_group_name = aws_db_subnet_group.lanchonetedb.name
   parameter_group_name = "default.mysql8.0"
+  skip_final_snapshot = true
 }
 
 resource "aws_db_subnet_group" "lanchonetedb" {
