@@ -17,7 +17,7 @@ resource "aws_db_instance" "lanchonete_db" {
 }
 
 resource "aws_db_subnet_group" "lanchonete_db" {
-  name       = "db-subnet-group"
+  name       = "subnet-group-db"
   subnet_ids = [
     aws_subnet.lanchonete_db[0].id,
     aws_subnet.lanchonete_db[1].id
