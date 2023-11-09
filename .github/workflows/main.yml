@@ -32,11 +32,3 @@ jobs:
           TF_VAR_db_user: ${{ secrets.DB_USER }}
           TF_VAR_db_password: ${{ secrets.DB_PASSWORD }}
           TF_VAR_vpc_id: ${{ secrets.VPC_ID }}
-
-      - name: Load Data into RDS
-        run: |
-          mysql -h ${TF_VAR_db_endpoint} -u ${TF_VAR_db_user} -p"${TF_VAR_db_password}" < ../../docker/schema.sql
-        env:
-          TF_VAR_db_endpoint: ${aws_db_instance.lanchonetedb.endpoint}
-          TF_VAR_db_user: ${{ secrets.DB_USER }}
-          TF_VAR_db_password: ${{ secrets.DB_PASSWORD }}

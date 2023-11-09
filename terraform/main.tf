@@ -2,8 +2,8 @@ provider "aws" {
   region     = "${var.region}"
 }
 
-resource "aws_db_subnet_group" "default" {
-  name        = "main_subnet_group"
+resource "aws_db_subnet_group" "rds" {
+  name        = "lanchonete_rds_subnet_group"
   description = "Our main group of subnets"
   subnet_ids  = ["${aws_subnet.subnet_1.id}", "${aws_subnet.subnet_2.id}"]
 }
@@ -13,7 +13,7 @@ resource "aws_subnet" "subnet_1" {
   availability_zone = "${var.az_1}"
 
   tags = {
-    Name = "main_subnet1"
+    Name = "subnet1"
   }
 }
 
@@ -23,10 +23,10 @@ resource "aws_subnet" "subnet_2" {
   availability_zone = "${var.az_2}"
 
   tags = {
-    Name = "main_subnet2"
+    Name = "subnet2"
   }
 }
-resource "aws_security_group" "default" {
+resource "aws_security_group" "rds" {
   name        = "main_rds_sg"
   description = "Allow all inbound traffic"
   vpc_id      = "${var.vpc_id}"
@@ -59,7 +59,7 @@ resource "aws_db_instance" "lanchonete" {
   db_name                   = "${var.db_name}"
   username               = "${var.db_user}"
   password               = "${var.db_password}"
-  vpc_security_group_ids = ["${aws_security_group.default.id}"]
-  db_subnet_group_name   = "${aws_db_subnet_group.default.id}"
+  vpc_security_group_ids = ["${aws_security_group.rds.id}"]
+  db_subnet_group_name   = "${aws_db_subnet_group.rds.id}"
   skip_final_snapshot = "true"
 }
