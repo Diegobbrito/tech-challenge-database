@@ -3,8 +3,8 @@ provider "aws" {
 }
 
 resource "aws_db_subnet_group" "default" {
-  name        = "main_subnet_group"
-  description = "Our main group of subnets"
+  name        = "db_subnet_group"
+  description = "Main group of subnets"
   subnet_ids  = ["${aws_subnet.subnet_1.id}", "${aws_subnet.subnet_2.id}"]
 }
 resource "aws_subnet" "subnet_1" {
