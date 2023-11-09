@@ -66,7 +66,7 @@ variable "az_2" {
 
 variable "vpc_id" {
   description = "Your VPC ID"
-  default = "vpc-04c4622dbdafe7c10"
+  default = ""
 }
 variable "cidr_blocks" {
   default     = "0.0.0.0/0"
@@ -74,6 +74,6 @@ variable "cidr_blocks" {
 }
 
 variable "sg_name" {
-  default     = "rds-sg"
+  default     = "lanchonete-rds-sg"
   description = "Tag Name for sg"
 }
