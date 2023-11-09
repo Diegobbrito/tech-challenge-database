@@ -1,4 +1,4 @@
-rname: Create RDS with Data
+name: Create RDS with Data
 
 on:
   push:
