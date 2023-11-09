@@ -6,7 +6,7 @@ Este repositório contém código e configurações para criar uma infraestrutur
 
 ## Modelagem de Dados
 
-![Modelagem de Dados](https://github.com/Diegobbrito/tech-challenge-database/blob/release/1.0/Modelagem_BD.jpg?raw=true)
+![Modelagem de Dados](https://github.com/Diegobbrito/tech-challenge-database/blob/main/Modelagem_BD.jpg?raw=true)
 
 A imagem acima representa a modelagem de dados que será implementada na infraestrutura.
 Optamos por manter o projeto com um banco de dados relacional enquanto a aplicação for um monolíto. 
