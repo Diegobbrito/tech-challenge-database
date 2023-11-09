@@ -35,12 +35,12 @@ variable "db_name" {
   description = "db name"
 }
 
-variable "username" {
+variable "db_user" {
   description = "User name"
   default     = ""
 }
 
-variable "password" {
+variable "db_password" {
   description = "password, provide through your ENV variables"
   default = ""
 }
