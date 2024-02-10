@@ -1,19 +1,24 @@
 # Tech-challenge-database
 
-# Infraestrutura na AWS RDS usando Terraform
+# Infraestrutura na AWS usando Terraform
 
-Este repositório contém código e configurações para criar uma infraestrutura no Amazon RDS utilizando Terraform.
+Este repositório contém código e configurações para criar uma infraestrutura no Amazon utilizando Terraform.
 
 ## Modelagem de Dados
 
 ![Modelagem de Dados](https://github.com/Diegobbrito/tech-challenge-database/blob/main/Modelagem_BD.jpg?raw=true)
 
 A imagem acima representa a modelagem de dados que será implementada na infraestrutura.
-Optamos por manter o projeto com um banco de dados relacional enquanto a aplicação for um monolíto. 
+Optamos por manter o projeto com 3 instancias de banco de dados relacional, para cada um dos serviços: 
+ - Clientes
+ - Produtos
+ - Pedidos
+
+Para o serviço de pagamentos sera utilizado o banco noSQL MongoDB.
 
 ## Estrutura do Projeto
 
-- `/terraform`: Contém os arquivos de configuração do Terraform para criar a infraestrutura no AWS RDS.
+- `/terraform`: Contém os arquivos de configuração do Terraform para criar a infraestrutura no AWS RDS e MongoDB.
 - `/k8s`: Inclui os arquivos de configuração do Kubernetes desenvolvido anteriormente.
 
 ## Pré-requisitos
@@ -24,7 +29,7 @@ Optamos por manter o projeto com um banco de dados relacional enquanto a aplica�
 
 ## Configuração e Implantação
 
- **Infraestrutura AWS RDS**:
+ **Infraestrutura de bancos de dados AWS RDS e MongoDB**:
    - Crie uma nova branch
    - Navegue até o diretório `/terraform`.
    - Atualize os arquivos .tf com o que for necessário
@@ -34,7 +39,7 @@ Optamos por manter o projeto com um banco de dados relacional enquanto a aplica�
 ## Stack utilizada
 **Cloud Provider:** AWS
 
-**Banco de dados:** Rds MySql
+**Banco de dados:** RDS MySql e MongoDB
 
 **IaC:** Terraform
 
